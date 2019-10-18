@@ -17,4 +17,5 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \
  | sh -s -- -y --profile minimal --default-toolchain stable
 
 RUN npm i -g serverless@1.54.0
-ENTRYPOINT ["serverless"]
+ADD "entrypoint.sh" "entrypoint.sh"
+ENTRYPOINT ["/entrypoint.sh"]
