@@ -3,7 +3,13 @@ name: Main
 on: push
 
 jobs:
-   publish-docs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Test
+        run: echo test
+  publish-docs:
     needs: [test]
     runs-on: ubuntu-latest
     steps:
